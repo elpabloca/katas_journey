@@ -15,7 +15,7 @@ function isPalindrome2(x){
         return false
     }
 
-    let original = x
+    const original = x
     let reversed = 0
 
     while (x > 0) {
@@ -31,4 +31,4 @@ function isPalindrome2(x){
 
 const num = 1223
 
-console.log(isPalindrome2(num)) // 3221 -> false
+console.log(isPalindrome(num)) // 3221 -> false
