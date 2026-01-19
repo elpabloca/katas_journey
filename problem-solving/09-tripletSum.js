@@ -43,12 +43,11 @@ function tripletSumBruteForce(nums) {
 - Find a pair whose sum equals 2
 */
 function tripletSum(nums){
+const triplets = []
+nums.sort((a, b) => a - b)
 
-let triplets = []
-nums.sort()
-
+console.log(nums)
 // We first sort the array, which takes O(n log(n)) time.
-
 for (let i = 0; i < nums.length - 1; i++){
 
     // Optimization: triplets consisting of only positive numbers will never sum to zero
@@ -69,31 +68,32 @@ return triplets
 }
 
 function pairSumSortedAllPairs(nums, start, target) {
-    const pairs = []
-    let left = start
-    let right = nums.length - 1
+  const pairs = []
+  let left = start
+  let right = nums.length - 1
 
-    while (left < right){
-        let sum = nums[left] + nums[right]
+  while (left < right){
+    const sum = nums[left] + nums[right]
 
-        if(sum === target){
-            pairs.push([nums[left], nums[right]])
-            left++
+    if(sum === target){
+      pairs.push([nums[left], nums[right]])
+      left++
 
-            while (left < right && nums[left] === nums[left - 1]){
-                left++
-            }
-        } else if(sum < target){
-            left++
-        } else {
-            right--
-        }
+      while (left < right && nums[left] === nums[left - 1]){
+        left++
+      }
+    } else if(sum < target){
+      left++
+    } else {
+      right--
     }
+  }
 
-    return pairs
+  return pairs
 }
-
-const numbers = [0, -1, 2, -3, 1, 4]
+// [2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4,5,5,-10]
+// [0, -1, 2, -3, 1, 4]
+const numbers = [2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4,5,5,-10]
 
 // every sum of triplet should be zero
 // console.log(tripletSumBruteForce(numbers), 'brute force')
