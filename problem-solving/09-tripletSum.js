@@ -57,12 +57,8 @@ for (let i = 0; i < nums.length - 1; i++){
     if(i > 0 && nums[i] === nums[i - 1]) continue
     // The previous number
 
-    console.log('continua')
-
     // Find all pairs that sum to a target of '-a' (-nums[i])
     const pairs = pairSumSortedAllPairs(nums, i + 1, -nums[i])
-
-    console.log(pairs, 'pairs of '+ nums[i])
     
     for (const pair of pairs) {
       triplets.push([nums[i], ...pair]);
