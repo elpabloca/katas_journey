@@ -46,7 +46,6 @@ function tripletSum(nums){
 const triplets = []
 nums.sort((a, b) => a - b)
 
-console.log(nums)
 // We first sort the array, which takes O(n log(n)) time.
 for (let i = 0; i < nums.length - 1; i++){
 
