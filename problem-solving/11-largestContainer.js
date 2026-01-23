@@ -19,5 +19,30 @@ function largestContainerBruteForce(heights) {
   return maxWater;
 }
 
+// time complexity O(n)
+// SPACE COMPLEXITY: O(1)
+function largestContainer(heights) {
+  let maxWater = 0;
+  let left = 0;
+  let right = heights.length - 1;
+
+  while (left < right) {
+    const water = Math.min(heights[left], heights[right]) * (right - left);
+    maxWater = Math.max(maxWater, water);
+
+    if (heights[left] < heights[right]) {
+      left += 1;
+    } else if (heights[left] > heights[right]) {
+      right -= 1;
+    } else {
+      left += 1;
+      right -= 1;
+    }
+  }
+
+  return maxWater;
+}
+
 const heights = [2, 7, 8, 3, 7, 6];
-console.log(largestContainerBruteForce(heights));
+// console.log(largestContainerBruteForce(heights));
+console.log(largestContainer(heights))
