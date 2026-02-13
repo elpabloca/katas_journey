@@ -11,7 +11,6 @@ func eachConst(arr []int, sizeSubsetNumber int) [][]int {
 	for i := 0; i <= len(arr)-sizeSubsetNumber; i++ {
 		subset := arr[i : i+sizeSubsetNumber]
 		result = append(result, subset)
-		fmt.Println(result, "result array")
 	}
 
 	return result

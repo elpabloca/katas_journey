@@ -10,7 +10,6 @@ function eachConst (arr, sizeSubsetNumber) {
     // calculate how many subarrays would be have
     for (let i=0; i <= arr.length - sizeSubsetNumber; i++){
         result.push(arr.slice(i, i + sizeSubsetNumber))
-        console.log(result, 'result array')
     }
     return result
 }
